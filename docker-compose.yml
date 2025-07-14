@@ -27,7 +27,3 @@ services:
     ports:
       - "9966:9966"
     restart: unless-stopped
-
-tmpfs:
-  data_tmp:
-    driver: local
