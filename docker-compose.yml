@@ -13,7 +13,7 @@ services:
         osrm-partition /data/indonesia-latest.osrm && \
         osrm-customize /data/indonesia-latest.osrm;
       fi && \
-      osrm-routed --algorithm mld --threads 24 /data/indonesia-latest.osrm
+      osrm-routed --algorithm mld --threads 24 --ip 0.0.0.0 /data/indonesia-latest.osrm
       "
     ports:
       - "5000:5000"
@@ -23,7 +23,7 @@ services:
     image: osrm/osrm-frontend
     container_name: osrm-frontend
     environment:
-      - OSRM_BACKEND=http://osrm-backend:5000
+      - OSRM_BACKEND=http://192.168.50.100:5000
     ports:
       - "9966:9966"
     restart: unless-stopped
