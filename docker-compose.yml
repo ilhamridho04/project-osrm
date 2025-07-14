@@ -27,3 +27,16 @@ services:
     ports:
       - "9966:9966"
     restart: unless-stopped
+
+  nominatim:
+    image: mediagis/nominatim:4.4
+    container_name: nominatim
+    volumes:
+      - ./nominatim-data:/nominatim/data
+    environment:
+      - PBF_PATH=/nominatim/data/indonesia-latest.osm.pbf
+      - THREADS=16
+      - IMPORT_STYLE=full
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
