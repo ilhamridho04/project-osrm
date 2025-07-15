@@ -9,7 +9,7 @@ services:
       - ./pgdata:/var/lib/postgresql/14/main
     environment:
       - PBF_PATH=/nominatim/data/indonesia-latest.osm.pbf
-      - IMPORT_WIKIPEDIA=/nominatim/data/wikimedia-importance-2024-08.csv.gz
+      # - IMPORT_WIKIPEDIA=/nominatim/data/wikimedia-importance-2024-08.csv.gz
       - THREADS=16
       - IMPORT_STYLE=full
     ports:
