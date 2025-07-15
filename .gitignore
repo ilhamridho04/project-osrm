@@ -1,2 +1,5 @@
 *.pbf
 *.osrm*
+wikimedia-importance-2024-08.csv.gz
+pgdata/
+nominatim-data/

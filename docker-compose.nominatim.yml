@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  nominatim:
+    image: mediagis/nominatim:4.4
+    container_name: nominatim
+    volumes:
+      - ./nominatim-data:/nominatim/data
+      - ./pgdata:/var/lib/postgresql/14/main
+    environment:
+      - PBF_PATH=/nominatim/data/indonesia-latest.osm.pbf
+      - IMPORT_WIKIPEDIA=/nominatim/data/wikimedia-importance-2024-08.csv.gz
+      - THREADS=16
+      - IMPORT_STYLE=full
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
