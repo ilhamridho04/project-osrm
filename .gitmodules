@@ -1,0 +1,3 @@
+[submodule "frontend-submodule"]
+	path = frontend-submodule
+	url = https://github.com/Project-OSRM/osrm-frontend.git
